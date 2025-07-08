@@ -653,6 +653,9 @@ if (text == "✅ Blokdan chiqarish")
   ""📩 Ismingiz va raqamingizni yozing."": ""📩 Enter your name and phone number:"",
   ""✏️ Kurs yoki bot haqida fikringiz."": ""✏️ Your feedback about the course or bot:""
 }");
+      
+        Console.ReadLine(); // bu foydalanuvchi biror tugma bosmaguncha kutadi
+
     }
 
 

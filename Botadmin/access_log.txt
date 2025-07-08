@@ -1,0 +1,4 @@
+2025-06-25 15:41:35 | 892464915 | @no-username | Maqsud | "📋 Loglar"
+2025-06-25 15:42:05 | 892464915 | @no-username | Maqsud | "/tasdiqla_892464915"
+2025-06-25 15:42:11 | 892464915 | @no-username | Maqsud | "/tasdiqla_892464915"
+2025-06-25 15:42:20 | 892464915 | @no-username | Maqsud | "📊 Statistika"

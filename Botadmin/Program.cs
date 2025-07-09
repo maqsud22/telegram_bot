@@ -58,17 +58,29 @@ class Program
         var botClient = new TelegramBotClient(botToken);
         using var cts = new CancellationTokenSource();
 
-        var receiverOptions = new ReceiverOptions { AllowedUpdates = Array.Empty<UpdateType>() };
+        var receiverOptions = new ReceiverOptions
+        {
+            AllowedUpdates = Array.Empty<UpdateType>()
+        };
 
-        botClient.StartReceiving(HandleUpdateAsync, HandleErrorAsync, receiverOptions, cancellationToken: cts.Token);
+        botClient.StartReceiving(
+            HandleUpdateAsync,
+            HandleErrorAsync,
+            receiverOptions,
+            cancellationToken: cts.Token
+        );
+
         var me = await botClient.GetMeAsync();
         Console.WriteLine($"✅ Bot ishga tushdi: @{me.Username}");
 
-        if (!System.IO.File.Exists(statsFile)) System.IO.File.WriteAllText(statsFile, "{}");
+        // 🔄 Statistika fayli mavjud bo‘lmasa, yaratish
+        if (!System.IO.File.Exists(statsFile))
+            System.IO.File.WriteAllText(statsFile, "{}");
 
-        Console.ReadLine();
-        cts.Cancel();
+        // ⏳ Botni cheksiz ishlashi uchun kutish
+        await Task.Delay(-1);
     }
+
 
 
     static void LoadLanguages()
@@ -653,8 +665,8 @@ if (text == "✅ Blokdan chiqarish")
   ""📩 Ismingiz va raqamingizni yozing."": ""📩 Enter your name and phone number:"",
   ""✏️ Kurs yoki bot haqida fikringiz."": ""✏️ Your feedback about the course or bot:""
 }");
-      
-        Console.ReadLine(); // bu foydalanuvchi biror tugma bosmaguncha kutadi
+
+
 
     }
 
